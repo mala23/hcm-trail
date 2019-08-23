@@ -1,0 +1,10 @@
+{{!< default}}
+
+{{> header
+    header-image=@blog.cover_image
+    header-index=true
+    title=@blog.description}}
+
+<main id="main" class="container hide-on-menu">
+    {{> posts type="grid" match-height=true}}
+</main>

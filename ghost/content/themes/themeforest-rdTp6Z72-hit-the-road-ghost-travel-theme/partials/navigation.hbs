@@ -1,0 +1,28 @@
+<ul class="nav navbar-nav clearfix">
+    {{#foreach navigation}}
+    <li><a href="{{url absolute="true"}}" class="{{#if current}}active{{/if}}">{{label}}</a></li>
+    {{/foreach}}
+    <li class="search hidden-xs hidden-sm">
+        <form class="form" id="header-search-form" method="get" action="{{@site.url}}/search/">
+            <div class="input-group nav-search">
+                <div class="input-wrap">
+                    <input class="form-control" id="header-search-input" type="text" name="q"
+                        placeholder="{{t "Search"}}" />
+                </div>
+                <button class="btn btn-input inactive" type="button" id="header-search-button"><i
+                        class="fa fa-search"></i></button>
+            </div>
+        </form>
+    </li>
+    <li class="search visible-xs visible-sm">
+        <form class="form form-search-hamburger" method="get" action="{{@site.url}}/search/">
+            <div class="input-group">
+                <input id="sidebar-search-field" class="form-control" type="text" name="q"
+                    placeholder="{{t "Search"}}" />
+                <div class="input-group-btn">
+                    <button class="btn btn-input" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+    </li>
+</ul>

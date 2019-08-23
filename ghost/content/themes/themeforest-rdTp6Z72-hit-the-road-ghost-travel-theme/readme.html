@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Hit the Road Documentation</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
+  </style>
+  <link href="data:text/css;charset=utf-8,%40font%2Dface%20%7B%0Afont%2Dfamily%3A%20octicons%2Dlink%3B%0Asrc%3A%20url%28data%3Afont%2Fwoff%3Bcharset%3Dutf%2D8%3Bbase64%2Cd09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM%2B8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB%2FaFGpk3jaTY6xa8JAGMW%2FO62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v%2Bk%2F0an2i%2BitHDw3v2%2B9%2BDBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3%2FI7AtxEJLtzzuZfI%2BVVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy%2FLt7Kc%2B0vWY%2FgAgIIEqAN9we0pwKXreiMasxvabDQMM4riO%2BqxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw%2Bymhce7vwM9jSqO8JyVd5RH9gyTt2%2BJ%2FyUmYlIR0s04n6%2B7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv%2FocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi%2BW2%2BMjCzMIDApSwvXzC97Z4Ig8N%2FBxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh%2F8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT%2BAEjAwuDFpBmA9KMDEwMCh9i%2Fv8H8sH0%2F4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9%2FlqYwOGZxeUelN2U2R6%2BcArgtCJpauW7UQBqnFkUsjAY%2FkOU1cP%2BDAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl%2BvvmM%2FbyA48e6tWrKArm4ZJlCbdsrxksL1AwWn%2FyBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO%2F%2FsdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd%2F89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF%2B9JOS0nbaaYDCQfwCJ7Au3AHj%2BLO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm%2BEBXuAbHmIMSRMs%2B4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL%2BhD7C1xoaHeLJSEao0FEW14ckxC%2BTU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13%2F%2Blm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl%2B9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O%2FAdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB%2F%2F%2FAA8AAQAAAAAAAAAAAAAAAAABAAAAAA%3D%3D%29%20format%28%27woff%27%29%3B%0A%7D%0Abody%20%7B%0A%2Dwebkit%2Dtext%2Dsize%2Dadjust%3A%20100%25%3B%0Atext%2Dsize%2Dadjust%3A%20100%25%3B%0Acolor%3A%20%23333%3B%0Afont%2Dfamily%3A%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20%22Segoe%20UI%22%2C%20Arial%2C%20freesans%2C%20sans%2Dserif%2C%20%22Apple%20Color%20Emoji%22%2C%20%22Segoe%20UI%20Emoji%22%2C%20%22Segoe%20UI%20Symbol%22%3B%0Afont%2Dsize%3A%2016px%3B%0Aline%2Dheight%3A%201%2E6%3B%0Aword%2Dwrap%3A%20break%2Dword%3B%0Awidth%3A%20728px%3B%0Amax%2Dwidth%3A%2099%25%3B%0Abox%2Dsizing%3A%20border%2Dbox%3B%0Apadding%3A%2030px%2030px%208rem%2030px%3B%0Amargin%2Dleft%3A%20auto%3B%0Amargin%2Dright%3A%20auto%3B%0A%7D%0Abody%20a%20%7B%0Abackground%2Dcolor%3A%20transparent%3B%0A%7D%0Abody%20a%3Aactive%2C%0Abody%20a%3Ahover%20%7B%0Aoutline%3A%200%3B%0A%7D%0Abody%20strong%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Abody%20h1%20%7B%0Afont%2Dsize%3A%202em%3B%0Amargin%3A%200%2E67em%200%3B%0A%7D%0Abody%20img%20%7B%0Aborder%3A%200%3B%0A%7D%0Abody%20hr%20%7B%0Abox%2Dsizing%3A%20content%2Dbox%3B%0Aheight%3A%200%3B%0A%7D%0Abody%20pre%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0Abody%20code%2C%0Abody%20kbd%2C%0Abody%20pre%20%7B%0Afont%2Dfamily%3A%20monospace%2C%20monospace%3B%0Afont%2Dsize%3A%201em%3B%0A%7D%0Abody%20input%20%7B%0Acolor%3A%20inherit%3B%0Afont%3A%20inherit%3B%0Amargin%3A%200%3B%0A%7D%0Abody%20html%20input%5Bdisabled%5D%20%7B%0Acursor%3A%20default%3B%0A%7D%0Abody%20input%20%7B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Abody%20input%5Btype%3D%22checkbox%22%5D%20%7B%0Abox%2Dsizing%3A%20border%2Dbox%3B%0Apadding%3A%200%3B%0A%7D%0Abody%20table%20%7B%0Aborder%2Dcollapse%3A%20collapse%3B%0Aborder%2Dspacing%3A%200%3B%0A%7D%0Abody%20td%2C%0Abody%20th%20%7B%0Apadding%3A%200%3B%0A%7D%0Abody%20%2A%20%7B%0Abox%2Dsizing%3A%20border%2Dbox%3B%0A%7D%0Abody%20input%20%7B%0Afont%3A%2013px%20%2F%201%2E4%20Helvetica%2C%20arial%2C%20nimbussansl%2C%20liberationsans%2C%20freesans%2C%20clean%2C%20sans%2Dserif%2C%20%22Apple%20Color%20Emoji%22%2C%20%22Segoe%20UI%20Emoji%22%2C%20%22Segoe%20UI%20Symbol%22%3B%0A%7D%0Abody%20a%20%7B%0Acolor%3A%20%234078c0%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Abody%20a%3Ahover%2C%0Abody%20a%3Aactive%20%7B%0Atext%2Ddecoration%3A%20underline%3B%0A%7D%0Abody%20hr%20%7B%0Aheight%3A%200%3B%0Amargin%3A%2015px%200%3B%0Aoverflow%3A%20hidden%3B%0Abackground%3A%20transparent%3B%0Aborder%3A%200%3B%0Aborder%2Dbottom%3A%201px%20solid%20%23ddd%3B%0A%7D%0Abody%20hr%3Abefore%20%7B%0Adisplay%3A%20table%3B%0Acontent%3A%20%22%22%3B%0A%7D%0Abody%20hr%3Aafter%20%7B%0Adisplay%3A%20table%3B%0Aclear%3A%20both%3B%0Acontent%3A%20%22%22%3B%0A%7D%0Abody%20h1%2C%0Abody%20h2%2C%0Abody%20h3%2C%0Abody%20h4%2C%0Abody%20h5%2C%0Abody%20h6%20%7B%0Amargin%2Dtop%3A%2015px%3B%0Amargin%2Dbottom%3A%2015px%3B%0Aline%2Dheight%3A%201%2E1%3B%0A%7D%0Abody%20h1%20%7B%0Afont%2Dsize%3A%2030px%3B%0A%7D%0Abody%20h2%20%7B%0Afont%2Dsize%3A%2021px%3B%0A%7D%0Abody%20h3%20%7B%0Afont%2Dsize%3A%2016px%3B%0A%7D%0Abody%20h4%20%7B%0Afont%2Dsize%3A%2014px%3B%0A%7D%0Abody%20h5%20%7B%0Afont%2Dsize%3A%2012px%3B%0A%7D%0Abody%20h6%20%7B%0Afont%2Dsize%3A%2011px%3B%0A%7D%0Abody%20blockquote%20%7B%0Amargin%3A%200%3B%0A%7D%0Abody%20ul%2C%0Abody%20ol%20%7B%0Apadding%3A%200%3B%0Amargin%2Dtop%3A%200%3B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Abody%20ol%20ol%2C%0Abody%20ul%20ol%20%7B%0Alist%2Dstyle%2Dtype%3A%20lower%2Droman%3B%0A%7D%0Abody%20ul%20ul%20ol%2C%0Abody%20ul%20ol%20ol%2C%0Abody%20ol%20ul%20ol%2C%0Abody%20ol%20ol%20ol%20%7B%0Alist%2Dstyle%2Dtype%3A%20lower%2Dalpha%3B%0A%7D%0Abody%20dd%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Abody%20code%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20%22Liberation%20Mono%22%2C%20Menlo%2C%20Courier%2C%20monospace%3B%0Afont%2Dsize%3A%2012px%3B%0A%7D%0Abody%20pre%20%7B%0Amargin%2Dtop%3A%200%3B%0Amargin%2Dbottom%3A%200%3B%0Afont%3A%2012px%20Consolas%2C%20%22Liberation%20Mono%22%2C%20Menlo%2C%20Courier%2C%20monospace%3B%0A%7D%0Abody%20%2Eselect%3A%3A%2Dms%2Dexpand%20%7B%0Aopacity%3A%200%3B%0A%7D%0Abody%20%2Eocticon%20%7B%0Afont%3A%20normal%20normal%20normal%2016px%2F1%20octicons%2Dlink%3B%0Adisplay%3A%20inline%2Dblock%3B%0Atext%2Ddecoration%3A%20none%3B%0Atext%2Drendering%3A%20auto%3B%0A%2Dwebkit%2Dfont%2Dsmoothing%3A%20antialiased%3B%0A%2Dmoz%2Dosx%2Dfont%2Dsmoothing%3A%20grayscale%3B%0A%2Dwebkit%2Duser%2Dselect%3A%20none%3B%0A%2Dmoz%2Duser%2Dselect%3A%20none%3B%0A%2Dms%2Duser%2Dselect%3A%20none%3B%0Auser%2Dselect%3A%20none%3B%0A%7D%0Abody%20%2Eocticon%2Dlink%3Abefore%20%7B%0Acontent%3A%20%27%5Cf05c%27%3B%0A%7D%0Abody%3Abefore%20%7B%0Adisplay%3A%20table%3B%0Acontent%3A%20%22%22%3B%0A%7D%0Abody%3Aafter%20%7B%0Adisplay%3A%20table%3B%0Aclear%3A%20both%3B%0Acontent%3A%20%22%22%3B%0A%7D%0Abody%3E%2A%3Afirst%2Dchild%20%7B%0Amargin%2Dtop%3A%200%20%21important%3B%0A%7D%0Abody%3E%2A%3Alast%2Dchild%20%7B%0Amargin%2Dbottom%3A%200%20%21important%3B%0A%7D%0Abody%20a%3Anot%28%5Bhref%5D%29%20%7B%0Acolor%3A%20inherit%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Abody%20%2Eanchor%20%7B%0Adisplay%3A%20inline%2Dblock%3B%0Apadding%2Dright%3A%202px%3B%0Amargin%2Dleft%3A%20%2D18px%3B%0A%7D%0Abody%20%2Eanchor%3Afocus%20%7B%0Aoutline%3A%20none%3B%0A%7D%0Abody%20h1%2C%0Abody%20h2%2C%0Abody%20h3%2C%0Abody%20h4%2C%0Abody%20h5%2C%0Abody%20h6%20%7B%0Amargin%2Dtop%3A%201em%3B%0Amargin%2Dbottom%3A%2016px%3B%0Afont%2Dweight%3A%20bold%3B%0Aline%2Dheight%3A%201%2E4%3B%0A%7D%0Abody%20h1%20%2Eocticon%2Dlink%2C%0Abody%20h2%20%2Eocticon%2Dlink%2C%0Abody%20h3%20%2Eocticon%2Dlink%2C%0Abody%20h4%20%2Eocticon%2Dlink%2C%0Abody%20h5%20%2Eocticon%2Dlink%2C%0Abody%20h6%20%2Eocticon%2Dlink%20%7B%0Acolor%3A%20%23000%3B%0Avertical%2Dalign%3A%20middle%3B%0Avisibility%3A%20hidden%3B%0A%7D%0Abody%20h1%3Ahover%20%2Eanchor%2C%0Abody%20h2%3Ahover%20%2Eanchor%2C%0Abody%20h3%3Ahover%20%2Eanchor%2C%0Abody%20h4%3Ahover%20%2Eanchor%2C%0Abody%20h5%3Ahover%20%2Eanchor%2C%0Abody%20h6%3Ahover%20%2Eanchor%20%7B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Abody%20h1%3Ahover%20%2Eanchor%20%2Eocticon%2Dlink%2C%0Abody%20h2%3Ahover%20%2Eanchor%20%2Eocticon%2Dlink%2C%0Abody%20h3%3Ahover%20%2Eanchor%20%2Eocticon%2Dlink%2C%0Abody%20h4%3Ahover%20%2Eanchor%20%2Eocticon%2Dlink%2C%0Abody%20h5%3Ahover%20%2Eanchor%20%2Eocticon%2Dlink%2C%0Abody%20h6%3Ahover%20%2Eanchor%20%2Eocticon%2Dlink%20%7B%0Avisibility%3A%20visible%3B%0A%7D%0Abody%20h1%20%7B%0Apadding%2Dbottom%3A%200%2E3em%3B%0Afont%2Dsize%3A%201%2E75em%3B%0Aline%2Dheight%3A%201%2E2%3B%0A%7D%0Abody%20h1%20%2Eanchor%20%7B%0Aline%2Dheight%3A%201%3B%0A%7D%0Abody%20h2%20%7B%0Apadding%2Dbottom%3A%200%2E3em%3B%0Afont%2Dsize%3A%201%2E5em%3B%0Aline%2Dheight%3A%201%2E225%3B%0A%7D%0Abody%20h2%20%2Eanchor%20%7B%0Aline%2Dheight%3A%201%3B%0A%7D%0Abody%20h3%20%7B%0Afont%2Dsize%3A%201%2E25em%3B%0Aline%2Dheight%3A%201%2E43%3B%0A%7D%0Abody%20h3%20%2Eanchor%20%7B%0Aline%2Dheight%3A%201%2E2%3B%0A%7D%0Abody%20h4%20%7B%0Afont%2Dsize%3A%201em%3B%0A%7D%0Abody%20h4%20%2Eanchor%20%7B%0Aline%2Dheight%3A%201%2E2%3B%0A%7D%0Abody%20h5%20%7B%0Afont%2Dsize%3A%201em%3B%0A%7D%0Abody%20h5%20%2Eanchor%20%7B%0Aline%2Dheight%3A%201%2E1%3B%0A%7D%0Abody%20h6%20%7B%0Afont%2Dsize%3A%201em%3B%0Acolor%3A%20%23777%3B%0A%7D%0Abody%20h6%20%2Eanchor%20%7B%0Aline%2Dheight%3A%201%2E1%3B%0A%7D%0Abody%20p%2C%0Abody%20blockquote%2C%0Abody%20ul%2C%0Abody%20ol%2C%0Abody%20dl%2C%0Abody%20table%2C%0Abody%20pre%20%7B%0Amargin%2Dtop%3A%200%3B%0Amargin%2Dbottom%3A%2016px%3B%0A%7D%0Abody%20hr%20%7B%0Aheight%3A%204px%3B%0Apadding%3A%200%3B%0Amargin%3A%2016px%200%3B%0Abackground%2Dcolor%3A%20%23e7e7e7%3B%0Aborder%3A%200%20none%3B%0A%7D%0Abody%20ul%2C%0Abody%20ol%20%7B%0Apadding%2Dleft%3A%202em%3B%0A%7D%0Abody%20ul%20ul%2C%0Abody%20ul%20ol%2C%0Abody%20ol%20ol%2C%0Abody%20ol%20ul%20%7B%0Amargin%2Dtop%3A%200%3B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Abody%20li%3Ep%20%7B%0Amargin%2Dtop%3A%2016px%3B%0A%7D%0Abody%20dl%20%7B%0Apadding%3A%200%3B%0A%7D%0Abody%20dl%20dt%20%7B%0Apadding%3A%200%3B%0Amargin%2Dtop%3A%2016px%3B%0Afont%2Dsize%3A%201em%3B%0Afont%2Dstyle%3A%20italic%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Abody%20dl%20dd%20%7B%0Apadding%3A%200%2016px%3B%0Amargin%2Dbottom%3A%2016px%3B%0A%7D%0Abody%20blockquote%20%7B%0Apadding%3A%200%2015px%3B%0Acolor%3A%20%23777%3B%0Aborder%2Dleft%3A%204px%20solid%20%23ddd%3B%0A%7D%0Abody%20blockquote%3E%3Afirst%2Dchild%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Abody%20blockquote%3E%3Alast%2Dchild%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Abody%20table%20%7B%0Adisplay%3A%20block%3B%0Awidth%3A%20100%25%3B%0Aoverflow%3A%20auto%3B%0Aword%2Dbreak%3A%20normal%3B%0Aword%2Dbreak%3A%20keep%2Dall%3B%0A%7D%0Abody%20table%20th%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Abody%20table%20th%2C%0Abody%20table%20td%20%7B%0Apadding%3A%206px%2013px%3B%0Aborder%3A%201px%20solid%20%23ddd%3B%0A%7D%0Abody%20table%20tr%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Aborder%2Dtop%3A%201px%20solid%20%23ccc%3B%0A%7D%0Abody%20table%20tr%3Anth%2Dchild%282n%29%20%7B%0Abackground%2Dcolor%3A%20%23f8f8f8%3B%0A%7D%0Abody%20img%20%7B%0Amax%2Dwidth%3A%20100%25%3B%0Abox%2Dsizing%3A%20content%2Dbox%3B%0Abackground%2Dcolor%3A%20%23fff%3B%0A%7D%0Abody%20code%20%7B%0Apadding%3A%200%3B%0Apadding%2Dtop%3A%200%3B%0Apadding%2Dbottom%3A%200%3B%0Amargin%3A%200%3B%0Afont%2Dsize%3A%2085%25%3B%0Abackground%2Dcolor%3A%20rgba%280%2C0%2C0%2C0%2E04%29%3B%0Aborder%2Dradius%3A%203px%3B%0A%7D%0Abody%20code%3Abefore%2C%0Abody%20code%3Aafter%20%7B%0Aletter%2Dspacing%3A%20%2D0%2E2em%3B%0Acontent%3A%20%22%5C00a0%22%3B%0A%7D%0Abody%20pre%3Ecode%20%7B%0Apadding%3A%200%3B%0Amargin%3A%200%3B%0Afont%2Dsize%3A%20100%25%3B%0Aword%2Dbreak%3A%20normal%3B%0Awhite%2Dspace%3A%20pre%3B%0Abackground%3A%20transparent%3B%0Aborder%3A%200%3B%0A%7D%0Abody%20%2Ehighlight%20%7B%0Amargin%2Dbottom%3A%2016px%3B%0A%7D%0Abody%20%2Ehighlight%20pre%2C%0Abody%20pre%20%7B%0Apadding%3A%2016px%3B%0Aoverflow%3A%20auto%3B%0Afont%2Dsize%3A%2085%25%3B%0Aline%2Dheight%3A%201%2E45%3B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0A%7D%0Abody%20%2Ehighlight%20pre%20%7B%0Amargin%2Dbottom%3A%200%3B%0Aword%2Dbreak%3A%20normal%3B%0A%7D%0Abody%20pre%20%7B%0Aword%2Dwrap%3A%20normal%3B%0A%7D%0Abody%20pre%20code%20%7B%0Adisplay%3A%20inline%3B%0Amax%2Dwidth%3A%20initial%3B%0Apadding%3A%200%3B%0Amargin%3A%200%3B%0Aoverflow%3A%20initial%3B%0Aline%2Dheight%3A%20inherit%3B%0Aword%2Dwrap%3A%20normal%3B%0Abackground%2Dcolor%3A%20transparent%3B%0Aborder%3A%200%3B%0A%7D%0Abody%20pre%20code%3Abefore%2C%0Abody%20pre%20code%3Aafter%20%7B%0Acontent%3A%20normal%3B%0A%7D%0Abody%20kbd%20%7B%0Adisplay%3A%20inline%2Dblock%3B%0Apadding%3A%203px%205px%3B%0Afont%2Dsize%3A%2011px%3B%0Aline%2Dheight%3A%2010px%3B%0Acolor%3A%20%23555%3B%0Avertical%2Dalign%3A%20middle%3B%0Abackground%2Dcolor%3A%20%23fcfcfc%3B%0Aborder%3A%20solid%201px%20%23ccc%3B%0Aborder%2Dbottom%2Dcolor%3A%20%23bbb%3B%0Aborder%2Dradius%3A%203px%3B%0Abox%2Dshadow%3A%20inset%200%20%2D1px%200%20%23bbb%3B%0A%7D%0Abody%20%2Epl%2Dc%20%7B%0Acolor%3A%20%23969896%3B%0A%7D%0Abody%20%2Epl%2Dc1%2C%0Abody%20%2Epl%2Ds%20%2Epl%2Dv%20%7B%0Acolor%3A%20%230086b3%3B%0A%7D%0Abody%20%2Epl%2De%2C%0Abody%20%2Epl%2Den%20%7B%0Acolor%3A%20%23795da3%3B%0A%7D%0Abody%20%2Epl%2Ds%20%2Epl%2Ds1%2C%0Abody%20%2Epl%2Dsmi%20%7B%0Acolor%3A%20%23333%3B%0A%7D%0Abody%20%2Epl%2Dent%20%7B%0Acolor%3A%20%2363a35c%3B%0A%7D%0Abody%20%2Epl%2Dk%20%7B%0Acolor%3A%20%23a71d5d%3B%0A%7D%0Abody%20%2Epl%2Dpds%2C%0Abody%20%2Epl%2Ds%2C%0Abody%20%2Epl%2Ds%20%2Epl%2Dpse%20%2Epl%2Ds1%2C%0Abody%20%2Epl%2Dsr%2C%0Abody%20%2Epl%2Dsr%20%2Epl%2Dcce%2C%0Abody%20%2Epl%2Dsr%20%2Epl%2Dsra%2C%0Abody%20%2Epl%2Dsr%20%2Epl%2Dsre%20%7B%0Acolor%3A%20%23183691%3B%0A%7D%0Abody%20%2Epl%2Dv%20%7B%0Acolor%3A%20%23ed6a43%3B%0A%7D%0Abody%20%2Epl%2Did%20%7B%0Acolor%3A%20%23b52a1d%3B%0A%7D%0Abody%20%2Epl%2Dii%20%7B%0Abackground%2Dcolor%3A%20%23b52a1d%3B%0Acolor%3A%20%23f8f8f8%3B%0A%7D%0Abody%20%2Epl%2Dsr%20%2Epl%2Dcce%20%7B%0Acolor%3A%20%2363a35c%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Abody%20%2Epl%2Dml%20%7B%0Acolor%3A%20%23693a17%3B%0A%7D%0Abody%20%2Epl%2Dmh%2C%0Abody%20%2Epl%2Dmh%20%2Epl%2Den%2C%0Abody%20%2Epl%2Dms%20%7B%0Acolor%3A%20%231d3e81%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Abody%20%2Epl%2Dmq%20%7B%0Acolor%3A%20%23008080%3B%0A%7D%0Abody%20%2Epl%2Dmi%20%7B%0Acolor%3A%20%23333%3B%0Afont%2Dstyle%3A%20italic%3B%0A%7D%0Abody%20%2Epl%2Dmb%20%7B%0Acolor%3A%20%23333%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Abody%20%2Epl%2Dmd%20%7B%0Abackground%2Dcolor%3A%20%23ffecec%3B%0Acolor%3A%20%23bd2c00%3B%0A%7D%0Abody%20%2Epl%2Dmi1%20%7B%0Abackground%2Dcolor%3A%20%23eaffea%3B%0Acolor%3A%20%2355a532%3B%0A%7D%0Abody%20%2Epl%2Dmdr%20%7B%0Acolor%3A%20%23795da3%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Abody%20%2Epl%2Dmo%20%7B%0Acolor%3A%20%231d3e81%3B%0A%7D%0Abody%20kbd%20%7B%0Adisplay%3A%20inline%2Dblock%3B%0Apadding%3A%203px%205px%3B%0Afont%3A%2011px%20Consolas%2C%20%22Liberation%20Mono%22%2C%20Menlo%2C%20Courier%2C%20monospace%3B%0Aline%2Dheight%3A%2010px%3B%0Acolor%3A%20%23555%3B%0Avertical%2Dalign%3A%20middle%3B%0Abackground%2Dcolor%3A%20%23fcfcfc%3B%0Aborder%3A%20solid%201px%20%23ccc%3B%0Aborder%2Dbottom%2Dcolor%3A%20%23bbb%3B%0Aborder%2Dradius%3A%203px%3B%0Abox%2Dshadow%3A%20inset%200%20%2D1px%200%20%23bbb%3B%0A%7D%0Abody%20%2Etask%2Dlist%2Ditem%20%7B%0Alist%2Dstyle%2Dtype%3A%20none%3B%0A%7D%0Abody%20%2Etask%2Dlist%2Ditem%2B%2Etask%2Dlist%2Ditem%20%7B%0Amargin%2Dtop%3A%203px%3B%0A%7D%0Abody%20%2Etask%2Dlist%2Ditem%20input%20%7B%0Amargin%3A%200%200%2E35em%200%2E25em%20%2D1%2E6em%3B%0Avertical%2Dalign%3A%20middle%3B%0A%7D%0Abody%20%3Achecked%2B%2Eradio%2Dlabel%20%7B%0Az%2Dindex%3A%201%3B%0Aposition%3A%20relative%3B%0Aborder%2Dcolor%3A%20%234078c0%3B%0A%7D%0A" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">Hit the Road Documentation</h1>
+</div>
+<p>We would like to thank you for purchasing Hit the Road theme.</p>
+<p>If you're having an issue and can't find the answer here, please send us an email to <a href="mailto:support@majesticjungle.com">support@majesticjungle.com</a> and we will try to answer as soon as possible. Also, feel free to suggest any new features you may want in this theme and we will consider adding it for the next update(s). Once you have purchased this theme you would have full access to all upcoming theme updates.</p>
+<p>You can always find newest version of this document <a href="http://demo.majesticjungle.com/hit-the-road/readme.html">here</a>.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#search-widget">Search Widget</a></li>
+<li><a href="#instagram-widget">Instagram Widget</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#weather-widget">Weather Widget</a></li>
+<li><a href="#subscribers">Subscribers</a></li>
+<li><a href="#maps-widget">Maps Widget</a></li>
+<li><a href="#google-analytics">Google Analytics</a></li>
+<li><a href="#navigation">Navigation</a></li>
+<li><a href="#changelog">Changelog</a></li>
+</ul>
+<h1 id="installation">Installation</h1>
+<p>Before you install <strong>Hit the Road</strong> theme, please make sure you have latest version of Ghost installed on your blog. The latest Ghost version that <strong>Hit the Road</strong> was tested against is 1.25.5</p>
+<p>The list of Ghost blog releases can be find <a href="https://github.com/TryGhost/Ghost/releases">here</a>.</p>
+<h2 id="upload-through-admin-dashboard">Upload through admin dashboard</h2>
+<p>Log into the dashboard of your blog and navigate to <strong>Settings » Design</strong>.</p>
+<p>Once there, click the <strong>Upload theme</strong> button. A file input dialog will appear. Select theme zip file that you have downloaded from your Themeforest account. After the theme is uploaded a new dialog will appear, asking if you want to activate the theme right now or just close the dialog. Click the <strong>Activate now</strong> button.</p>
+<h1 id="search-widget">Search Widget</h1>
+<p>To get the search working, either the old Public API or the new Content API must be enabled.</p>
+<p>First, create a new post and set it's title to &quot;Search&quot; (without quotes). Then, open the Post Settings and select the &quot;Turn this post into page&quot; checkbox. Also, the template options must be changed to &quot;Search&quot;.</p>
+<h3 id="public-api-pre-ghost-v2.10">Public API, pre Ghost v2.10</h3>
+<p>The search widget will appear automatically if the Public API is enabled.</p>
+<p>The Public API can be enabled on the <strong>Labs</strong> page.</p>
+<h3 id="content-api-post-ghost-v2.10">Content API, post Ghost v2.10</h3>
+<p>First, you have to obtain an access key from the admin dashboard.</p>
+<p>While on the admin dashboard, go to <strong>Integrations</strong> page and click the <strong>Add custom integration</strong> button. Enter &quot;Theme integration&quot; as integration name and click the <strong>Create</strong> button. On the next page, select and copy the Content API key.</p>
+<p>Now, replace <strong>content_api_key</strong> in the following code with the actual Content API key from the <strong>Integrations</strong> page.</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;content-api:access-key&quot;</span><span class="ot"> content=</span><span class="st">&quot;content_api_key&quot;</span><span class="kw">&gt;</span></code></pre></div>
+<p>After that, navigate to <strong>Code injection</strong> page and copy that code into <strong>Site header</strong> field and click the <strong>Save</strong> button.</p>
+<h1 id="instagram-widget">Instagram Widget</h1>
+<p>The Instagram Widget can show photos from your Instagram account on the sidebar of your blog. To get it working, the Instagram User ID and Access Token must be obtained first. <a href="https://elfsight.com/blog/2016/05/how-to-get-instagram-access-token/">Here</a> is a short guide how to get Instagram User ID and Access Token, if you have never done it before.</p>
+<p>Once you have it, go to the <strong>Code injection</strong> page in the administration area of your blog. Paste the following code into the <strong>Blog Header</strong> text field:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;instagram:user-id&quot;</span><span class="ot"> content=</span><span class="st">&quot;{user-id}&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;instagram:access-token&quot;</span><span class="ot"> content=</span><span class="st">&quot;{access-token}&quot;</span> <span class="kw">/&gt;</span></code></pre></div>
+<p>Replace <strong>{user-id}</strong> with your Instagram User ID and <strong>{access-token}</strong> with actual Access Token you have obtained from your Instagram account.</p>
+<p>Save the changes you have made by clicking the <strong>Save</strong> button in the upper right corner of the page.</p>
+<h1 id="comments">Comments</h1>
+<p>Ghost blog does not have its own comment system yet. But the theme has built-it support for Disqus commenting platform.</p>
+<p>To turn on Disqus comments, first, you have to register for Disqus account <a href="https://disqus.com/admin/create/">here</a>, or log into your account if you already have it and create a new site. Just remember the shortname of your newly created site, you will need it in the next step.</p>
+<p>Then, on your blog dashboard, navigate to the <strong>Code injection</strong> page and copy the following code into the <strong>Blog Header</strong> field:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;script&gt;</span>
+    <span class="kw">var</span> disqus_shortname <span class="op">=</span> <span class="st">'{disqus-shortname}'</span><span class="op">;</span>
+<span class="op">&lt;</span><span class="ss">/script&gt;</span></code></pre></div>
+<p>Replace <strong>{disqus-shortname}</strong> with the value of your site's shortname and click the <strong>Save</strong> button on the upper right corner of the page.</p>
+<h1 id="weather-widget">Weather Widget</h1>
+<p>Lets say you're writing an article about how to spent a nice weekend in L.A. and you'd like to display short weather forecast, so the reader could get an idea what the weather will be at this coming weekend. So you just simple put an extra meta tag after your article, e.g.:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;weather-widget:location&quot;</span><span class="ot"> content=</span><span class="st">&quot;Los Angeles, CA&quot;</span> <span class="kw">/&gt;</span></code></pre></div>
+<p>And it's done! The widget will appear in the sidebar next to your post. Actually, for your convenience this meta tag can be placed anywhere in the post.</p>
+<h2 id="setup">Setup</h2>
+<p>You can configure the weather widget in Code Injection page on your Ghost blog. If Blog Header textbox is empty, paste following code into it:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;weather-widget:provider&quot;</span><span class="ot"> content=</span><span class="st">&quot;yahoo&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;weather-widget:provider-key&quot;</span><span class="ot"> content=</span><span class="st">&quot;&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;weather-widget:loading-title&quot;</span><span class="ot"> content=</span><span class="st">&quot;Loading weather data...&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;weather-widget:units&quot;</span><span class="ot"> content=</span><span class="st">&quot;c&quot;</span> <span class="kw">/&gt;</span></code></pre></div>
+<h3 id="provider">Provider</h3>
+<p>Currently the widget supports two weather forecast providers.</p>
+<h4 id="yahoo-weather">Yahoo Weather</h4>
+<p>You can obtain required credentials for accessing Yahoo Weather API by registering your site on <a href="https://developer.yahoo.com/apps/create/">Yahoo Developer Network</a>.</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;weather-widget:provider&quot;</span><span class="ot"> content=</span><span class="st">&quot;yahoo&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;weather-widget:provider-client-id&quot;</span><span class="ot"> content=</span><span class="st">&quot;yahoo_client_id&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;weather-widget:provider-key&quot;</span><span class="ot"> content=</span><span class="st">&quot;yahoo_client_secret&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;weather-widget:provider-app-id&quot;</span><span class="ot"> content=</span><span class="st">&quot;yahoo_app_id&quot;</span> <span class="kw">/&gt;</span></code></pre></div>
+<h4 id="open-weather-map">Open Weather Map</h4>
+<p>Open Weather Map has a free plan with 50 000 requests per day and permits their weather data to be used with non-commercial and commercial purposes. Set provider to Open Weather Map by injecting the following code to the blog header:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;weather-widget:provider&quot;</span><span class="ot"> content=</span><span class="st">&quot;openweathermap&quot;</span> <span class="kw">/&gt;</span></code></pre></div>
+<p>You have to acquire an API key and inject it to the blog header too:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;weather-widget:provider-key&quot;</span><span class="ot"> content=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">place_your_api_key_here&gt;&quot;</span> <span class="kw">/&gt;</span></code></pre></div>
+<h3 id="units">Units</h3>
+<p>What units should be used to display weather temperature. C for celsius and F for fahrenheit.</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;weather-widget:units&quot;</span><span class="ot"> content=</span><span class="st">&quot;c&quot;</span> <span class="kw">/&gt;</span></code></pre></div>
+<h2 id="how-to-use">How to use</h2>
+<p>At the end of your article you can specify the location for the weather widget by adding this meta tag:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;weather-widget:location&quot;</span><span class="ot"> content=</span><span class="st">&quot;San Francisco, CA&quot;</span> <span class="kw">/&gt;</span></code></pre></div>
+<p>And that's it! The weather widget will appear in the sidebar along your article.</p>
+<h1 id="subscribers">Subscribers</h1>
+<p>The Subscribers is a feature of Ghost blog that allows you to capture email addresses on your blog, which can then be exported and imported.</p>
+<p>The Subscribers feature is not enabled by default, so in order to use it on your blog you have to enable it first.</p>
+<p>Inside your blog dashboard, go to <strong>Settings » Labs</strong>, and check the Subscribers box under the Beta features part of the page. After that, the Subscribers widget will appear on your blog.</p>
+<p>Read more about Subscribers feature <a href="https://help.ghost.org/article/10-subscribers-beta">here</a>.</p>
+<h1 id="maps-widget">Maps Widget</h1>
+<p>Before using Google Maps widget in your blog posts, you have to obtain Google Maps API key. If you never done it before, here is a <a href="https://developers.google.com/maps/documentation/embed/get-api-key">link</a> to a quick guide how to do that.</p>
+<p>Once you have the API key, use following example to put map widget in your blog posts:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;widget widget-inline render-component-location&quot;</span>
+<span class="ot">    data-api-key=</span><span class="st">&quot;your Google Maps API&quot;</span>
+<span class="ot">    data-title=</span><span class="st">&quot;Redwood National and State Parks&quot;</span>
+<span class="ot">    data-lat=</span><span class="st">&quot;41.2131788&quot;</span><span class="ot"> data-lng=</span><span class="st">&quot;-124.0046276&quot;</span>
+<span class="ot">    data-zoom=</span><span class="st">&quot;10&quot;</span>
+<span class="ot">    data-phone=</span><span class="st">&quot;+1 707-465-7335&quot;</span>
+<span class="ot">    data-location=</span><span class="st">&quot;California, United States&quot;</span>
+<span class="ot">    data-website=</span><span class="st">&quot;http://nps.gov&quot;</span>
+<span class="ot">    data-hours=</span><span class="st">&quot;Open 24 hours&quot;</span>
+<span class="ot">    data-show-marker=</span><span class="st">&quot;true&quot;</span>
+<span class="ot">    data-desc=</span><span class="st">&quot;Immense woodland system containing many towering redwood trees, with trails, campgrounds </span><span class="er">&amp;</span><span class="st"> more.&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></code></pre></div>
+<p>As you can see, the widget can be configured by setting data attributes on it's HTML tag.</p>
+<p>The API key, latitude and longitude properties are mandatory. If no other properties are present, map will expand to fill it's container horizontally.</p>
+<h1 id="google-analytics">Google Analytics</h1>
+<p>First of all, you have to obtain the Google Analytics tracking code. If you don't know how to get the tracking code, <a href="https://support.google.com/analytics/answer/1008080?hl=en">here</a> is the help article from Google that explains how to do that.</p>
+<p>Once you have the tracking code, go to the <strong>Code Injection</strong> page in your blog dashboard, and insert the code into <strong>Blog Footer</strong> field. Remember to save the changes you have made by clicking the <strong>Save</strong> button on the upper right corner of the page.</p>
+<h1 id="navigation">Navigation</h1>
+<p>Links to the navigation bar can be added through the admin panel or by editing <code>navigation.hbs</code> template.</p>
+<h2 id="drop-down-menu">Drop-down menu</h2>
+<p>A second level menu can be added to the navigation bar. To do this, open the <code>navigation.hbs</code> template and locate the <code>ul</code> tag. New menu items must be added inside the <code>ul</code> tag.</p>
+<p>Below is the example of HTML snippet that creates a second level menu that lists all the islands of Canaries archipelago.</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;dropdown&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="ot"> class=</span><span class="st">&quot;dropdown-toggle&quot;</span><span class="ot"> data-toggle=</span><span class="st">&quot;dropdown&quot;</span><span class="kw">&gt;</span>Canaries<span class="kw">&lt;b</span><span class="ot"> class=</span><span class="st">&quot;caret&quot;</span><span class="kw">&gt;&lt;/b&gt;&lt;/a&gt;</span>
+    <span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;dropdown-menu&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>El Hierro<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Fuerteventura<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Gran Canaria<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>La Gomera<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Lanzarote<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>La Palma<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Tenerife<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="kw">&lt;/ul&gt;</span>
+<span class="kw">&lt;/li&gt;</span></code></pre></div>
+<h2 id="dropdown-menu-with-map-glyphs">Dropdown menu with Map Glyphs</h2>
+<p>Various cartographic elements can be displayed using Map Glyphs web font by <a href="http://www.mapglyphs.com/">MapGlyps.com</a>. Because of licensing issues, the Map Glyphs font is not bundled with the theme. But you can download it from <a href="http://www.mapglyphs.com/">MapGlyps.com</a> and use it on your blog for free.</p>
+<p>Download the font from their site and extract everything into <code>assets/components/mapglyphs</code> folder.</p>
+<p>If a dropdown menu contains map glyphs items, in addition to <code>dropdown-menu</code> class it must contain <code>dropdown-menu-destinations</code> class too, e.g.:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;dropdown-menu dropdown-menu-destinations&quot;</span><span class="kw">&gt;</span></code></pre></div>
+<p>Below is the example of dropdown menu item that has a map of Europe next to it when viewed on the blog.</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;{{@blog.url}}tag/europe&quot;</span><span class="kw">&gt;&lt;i</span><span class="ot"> class=</span><span class="st">&quot;mg map-wrld-eu&quot;</span><span class="kw">&gt;&lt;/i&gt;</span>Europe<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></code></pre></div>
+<p>The list of all available elements can be found <a href="http://mapglyphs.com/maps">here</a>.</p>
+<h1 id="changelog">Changelog</h1>
+<h3 id="section">1.14 - 10-06-2019</h3>
+<h4 id="changed">Changed</h4>
+<ul>
+<li>Update OpenWeatherMap API url to be protocol agnostic</li>
+<li>Replace all <span class="citation">@blog</span> variables to <span class="citation">@site</span></li>
+</ul>
+<h3 id="section-1">1.13 - 27-03-2019</h3>
+<h4 id="added">Added</h4>
+<ul>
+<li>Make the blog url configurable from a meta tag.</li>
+</ul>
+<h3 id="section-2">1.12 - 26-03-2019</h3>
+<h4 id="fixed">Fixed</h4>
+<ul>
+<li>Make the comment widget to appear only when the Disqus shortname is set.</li>
+<li>Make the configuration meta tags to work with the name attribute too.</li>
+</ul>
+<h4 id="added-1">Added</h4>
+<ul>
+<li>Include Dutch translation. Thanks to Ron.</li>
+</ul>
+<h3 id="section-3">1.11 - 15-03-2019</h3>
+<h4 id="fixed-1">Fixed</h4>
+<ul>
+<li>Update the weather widget to support the new Yahoo Weather API.</li>
+</ul>
+<h3 id="section-4">1.10.1 - 06-03-2019</h3>
+<h4 id="fixed-2">Fixed</h4>
+<ul>
+<li>Fix post URL in the search result page.</li>
+</ul>
+<h3 id="section-5">1.10 - 04-03-2019</h3>
+<h4 id="added-2">Added</h4>
+<ul>
+<li>Make the search work with the new Content API.</li>
+</ul>
+<h4 id="changed-1">Changed</h4>
+<ul>
+<li>Remove Public API requirements from the tag and search widgets.</li>
+</ul>
+<h3 id="section-6">1.9.5 - 21-09-2018</h3>
+<h4 id="added-3">Added</h4>
+<ul>
+<li>Add support for image galleries.</li>
+</ul>
+<h3 id="section-7">1.9.4 - 31-08-2018</h3>
+<h4 id="fixed-3">Fixed</h4>
+<ul>
+<li>Fix the non-working search when blog has a large amount of posts.</li>
+</ul>
+<h3 id="section-8">1.9.3 - 28-08-2018</h3>
+<h4 id="changed-2">Changed</h4>
+<ul>
+<li>Limit the number of tags displayed in the tag widget to 15 and change the sorting order to post count.</li>
+</ul>
+<h4 id="fixed-4">Fixed</h4>
+<ul>
+<li>Fix the blog cover not showing up in the index page.</li>
+</ul>
+<h3 id="section-9">1.9.2 - 25-08-2018</h3>
+<h4 id="changed-3">Changed</h4>
+<ul>
+<li>Increase the limit of posts returned from the Ghost API.</li>
+</ul>
+<h4 id="fixed-5">Fixed</h4>
+<ul>
+<li>Fix the mobile menu toggle button.</li>
+<li>Fix the primary tag URL being empty in post cards.</li>
+</ul>
+<h3 id="section-10">1.9.1 - 22-08-2018</h3>
+<h4 id="fixed-6">Fixed</h4>
+<ul>
+<li>Fix the issue with the site branding, when &quot;Hit the Road&quot; is displayed instead of the site title.</li>
+</ul>
+<h3 id="section-11">1.9 - 19-08-2018</h3>
+<h4 id="added-4">Added</h4>
+<ul>
+<li>Add support for the Koenig Editor.</li>
+<li>Add support for Ghost Subscribers feature.</li>
+<li>Add translation file.</li>
+<li>Add multi-user support.</li>
+<li>Add Instagram widget.</li>
+<li>Add Featured Posts widgets.</li>
+</ul>
+<h4 id="changed-4">Changed</h4>
+<ul>
+<li>Make the Popular Tags widget to use built-in tag helper for listing tags, instead of specifying the tags manually.</li>
+<li>Make the About widget to display blog's description.</li>
+<li>Update Disqus embed code.</li>
+<li>Reduce the size of JavaScript files.</li>
+<li>Replace Gulp with simple NPM scripts for building JavaScript and Sass files.</li>
+</ul>
+<h4 id="fixed-7">Fixed</h4>
+<ul>
+<li>Fix the tags in the post card not being aligned properly.</li>
+</ul>
+<h4 id="removed">Removed</h4>
+<ul>
+<li>Remove React as dependency.</li>
+<li>Remove Ghost Hunter as dependency.</li>
+</ul>
+<h2 id="section-12">1.8 - 22-12-2017</h2>
+<h3 id="changed-5">Changed</h3>
+<ul>
+<li>Add links to the tags in the post header.</li>
+</ul>
+<h2 id="section-13">1.7.1 - 10-11-2017</h2>
+<h3 id="fixed-8">Fixed</h3>
+<ul>
+<li>Fix the JavaScript error that occurred on pages where the scroll hint was not present.</li>
+</ul>
+<h3 id="removed-1">Removed</h3>
+<ul>
+<li>Remove unnecessary code that was accidentally added by automated build system.</li>
+</ul>
+<h2 id="section-14">1.7 - 30-10-2017</h2>
+<h3 id="fixed-9">Fixed</h3>
+<ul>
+<li>Fix the broken scroll hint.</li>
+</ul>
+<h2 id="section-15">1.6 - 26-10-2017</h2>
+<h3 id="fixed-10">Fixed</h3>
+<ul>
+<li>Fix the non-working search when using the Cyrillic script.</li>
+</ul>
+<h2 id="section-16">1.5 - 26-08-2017</h2>
+<h3 id="added-5">Added</h3>
+<ul>
+<li>Add an option to show or hide marker on the Google Maps widget.</li>
+</ul>
+<h2 id="section-17">1.4 - 30-07-2017</h2>
+<h3 id="changed-6">Changed</h3>
+<ul>
+<li>Make the theme compatible with the Ghost 1.0.</li>
+</ul>
+<h2 id="section-18">1.3.3 - 28-06-2017</h2>
+<h3 id="fixed-11">Fixed</h3>
+<ul>
+<li>Fix the issue with having a broken layout when &quot;posts per page&quot; option value is greater than 8.</li>
+</ul>
+<h2 id="section-19">1.3.2 - 18-03-2017</h2>
+<h3 id="fixed-12">Fixed</h3>
+<ul>
+<li>Fix the issue with the Yahoo Weather API.</li>
+</ul>
+<h2 id="section-20">1.3.1 - 21-09-2016</h2>
+<h3 id="changed-7">Changed</h3>
+<ul>
+<li>Remove the protocol part from all Google Font URLs.</li>
+</ul>
+<h2 id="section-21">1.3 - 19-09-2016</h2>
+<h3 id="added-6">Added</h3>
+<ul>
+<li>Add search support.</li>
+</ul>
+<h3 id="fixed-13">Fixed</h3>
+<ul>
+<li>Fix grid display issue in inner pages.</li>
+<li>Fix CSS inconsistency between templates.</li>
+</ul>
+<h2 id="section-22">1.2 - 06-06-2016</h2>
+<h3 id="added-7">Added</h3>
+<ul>
+<li>Add links to the Facebook and Twitter profiles in the &quot;About the Author&quot; widget and page.</li>
+</ul>
+<h2 id="section-23">1.1.1 - 26-05-2016</h2>
+<h3 id="changed-8">Changed</h3>
+<ul>
+<li>Reduce the minimum height of the header image.</li>
+</ul>
+<h3 id="fixed-14">Fixed</h3>
+<ul>
+<li>Fix the &quot;About the Author&quot; widget display issue on Safari browsers.</li>
+</ul>
+<h2 id="section-24">1.1 - 10-05-2016</h2>
+<h3 id="added-8">Added</h3>
+<ul>
+<li>Add &quot;About the Author&quot; widget.</li>
+</ul>
+<h2 id="section-25">1.0.2 - 28-10-2015</h2>
+<h3 id="added-9">Added</h3>
+<ul>
+<li>Google Maps widget.</li>
+</ul>
+<h3 id="removed-2">Removed</h3>
+<ul>
+<li>Remove unused JavaScript dependencies.</li>
+</ul>
+<h2 id="section-26">1.0.1 - 16-10-2015</h2>
+<h3 id="added-10">Added</h3>
+<ul>
+<li>Added missing ghost_foot helper.</li>
+</ul>
+<h2 id="section-27">1.0 - 12-10-2015</h2>
+<ul>
+<li>Initial release.</li>
+</ul>
+</body>
+</html>

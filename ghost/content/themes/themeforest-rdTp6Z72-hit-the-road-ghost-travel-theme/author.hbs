@@ -1,0 +1,21 @@
+{{!< default}}
+
+{{#author}}
+    {{> header
+        header-author=true
+        category=(t "Author")
+        header-image=cover_image
+        cover-half=true
+        title=name
+        description=bio}}
+{{/author}}
+
+<main class="container hide-on-menu">
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+            {{> posts type="grid-narrow"}}
+        </div>
+        {{> sidebar}}
+    </div>
+</main>
+

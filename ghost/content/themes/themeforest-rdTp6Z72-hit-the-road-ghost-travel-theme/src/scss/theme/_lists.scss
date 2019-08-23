@@ -1,0 +1,9 @@
+.link-list {
+  a {
+    color: #333;
+    &:hover {
+
+      color: $brand-primary;
+    }
+  }
+}

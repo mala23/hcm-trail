@@ -1,0 +1,474 @@
+
+.preload-background-image {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  &:after {
+
+    display: block;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  }
+}
+
+.preload-background-darker {
+  .preload-background-image {
+    &:after {
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+    }
+  }
+}
+
+
+.posts {
+
+  @include make-row(10px);
+
+  .post {
+    padding-bottom: 10px !important;
+
+    .post-image {
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block;
+      position: relative;
+      margin-bottom: 0;
+
+      &:after {
+
+        display: block;
+        content: ' ';
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+      }
+    }
+
+    .post-image-image {
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease-in;
+      &:after {
+
+        display: block;
+        content: ' ';
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+      }
+    }
+
+    .post-header {
+      display: block;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+
+      .post-title {
+
+        line-height: 1.2;
+        display: block;
+        color: white;
+        margin-bottom: 0;
+        padding: 0;
+
+        a {
+          color: #333;
+
+          &:hover {
+            color: $brand-primary;
+          }
+        }
+      }
+
+      .post-excerpt {
+        display: none;
+      }
+    }
+
+    .post-category-wrap {
+      left: 20px;
+      position: absolute;
+      top: 14px;
+      display: flex;
+
+      .post-category {
+        @include heading-type();
+        display: block;
+        color: white;
+        font-weight: 800;
+        background-color: $brand-primary;
+        font-size: 13px;
+        text-transform: uppercase;
+        margin-right: 11px;
+        line-height: 1.5;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        padding: 2px 6px;
+
+        &.post-featured {
+          background-color: $brand-secondary;
+          color: #222;
+        }
+      }
+    }
+
+  }
+}
+
+$lg-2: (columns: 2, height: 500px, font-size: $font-size-h3);
+$lg-3: (columns: 3, height: 500px, font-size: $font-size-h2);
+$lg-4: (columns: 4, height: 500px, font-size: $font-size-h2);
+$lg-4-sm: (columns: 4, height: 400px, font-size: $font-size-h2);
+$lg-6: (columns: 6, height: 500px, font-size: $font-size-h1, max-width: 60%);
+$lg-9: (columns: 9, height: 500px, font-size: $font-size-h1, max-width: 60%);
+$lg-12: (columns: 12, height: 500px, font-size: 3.157em, max-width: 50%);
+
+$lg-6-short: (columns: 6, height: 250px, font-size: $font-size-h2);
+$lg-12-light: (columns: 12, height: 250px, font-size: $font-size-h2, max-width: 70%);
+$lg-6-narrow: (columns: 6, height: 500px, font-size: $font-size-h1);
+
+$md-3: (columns: 3, height: 500px, font-size: $font-size-h3);
+$md-4: (columns: 4, height: 500px, font-size: $font-size-h2);
+$md-6: (columns: 6, height: 500px, font-size: $font-size-h2);
+$md-8: (columns: 8, height: 500px, font-size: $font-size-h1, max-width: 60%);
+$md-9: (columns: 9, height: 500px, font-size: $font-size-h1, max-width: 60%);
+$md-12-light: (columns: 12, height: 250px, font-size: $font-size-h2, max-width: 70%);
+
+$md-6-short: (columns: 6, height: 250px, font-size: $font-size-h3, max-width: 70%);
+
+$inline-lg: (columns: 6, height: 350px, font-size: $font-size-h2);
+$inline-md: (columns: 6, height: 350px, font-size: $font-size-h2);
+$inline-sm: (columns: 6, height: 300px, font-size: $font-size-h2);
+$inline-xs: (columns: 12, height: 250px, font-size: $font-size-h3);
+
+$sm-3: (columns: 3, height: 250px, font-size: $font-size-h2);
+$sm-4: (columns: 4, height: 450px, font-size: $font-size-h3);
+$sm-6: (columns: 6, height: 500px, font-size: $font-size-h2);
+$sm-12: (columns: 12, height: 450px, font-size: $font-size-h1, max-width: 60%);
+$sm-12-lg: (columns: 12, height: 450px, font-size: $font-size-h2);
+$sm-12-short: (columns: 12, height: 250px, font-size: $font-size-h3, max-width: 100%);
+
+$xs-12: (columns: 12, height: 400px, font-size: $font-size-h2, max-width: 70%);
+
+$sidebar-12: (columns: 12, height: 350px, font-size: $font-size-h2, max-width: 80%);
+
+.posts-grid {
+  .post:nth-child(1) { @include make-grid-post2($lg-9, $md-9, $sm-12, $xs-12); }
+  .post:nth-child(2) { @include make-grid-post2($lg-3, $md-3, $sm-6, $xs-12); }
+  .post:nth-child(3) { @include make-grid-post2($lg-4, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(4) { @include make-grid-post2($lg-4, $md-4, $sm-4, $xs-12); }
+  .post:nth-child(5) { @include make-grid-post2($lg-4, $md-4, $sm-4, $xs-12); }
+  .post:nth-child(6) { @include make-grid-post2($lg-3, $md-3, $sm-4, $xs-12); }
+  .post:nth-child(7) { @include make-grid-post2($lg-6, $md-6, $sm-6, $xs-12); }
+  .post:nth-child(8) { @include make-grid-post2($lg-3, $md-3, $sm-6, $xs-12); }
+  .post:nth-child(9) { @include make-grid-post2($lg-9, $md-9, $sm-12, $xs-12); }
+  .post:nth-child(10) { @include make-grid-post2($lg-3, $md-3, $sm-6, $xs-12); }
+  .post:nth-child(11) { @include make-grid-post2($lg-4, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(12) { @include make-grid-post2($lg-4, $md-4, $sm-4, $xs-12); }
+  .post:nth-child(13) { @include make-grid-post2($lg-4, $md-4, $sm-4, $xs-12); }
+  .post:nth-child(14) { @include make-grid-post2($lg-3, $md-3, $sm-4, $xs-12); }
+  .post:nth-child(15) { @include make-grid-post2($lg-6, $md-6, $sm-6, $xs-12); }
+  .post:nth-child(16) { @include make-grid-post2($lg-3, $md-3, $sm-6, $xs-12); }
+  .post:nth-child(17) { @include make-grid-post2($lg-9, $md-9, $sm-12, $xs-12); }
+  .post:nth-child(18) { @include make-grid-post2($lg-3, $md-3, $sm-6, $xs-12); }
+  .post:nth-child(19) { @include make-grid-post2($lg-4, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(20) { @include make-grid-post2($lg-4, $md-4, $sm-4, $xs-12); }
+  .post:nth-child(21) { @include make-grid-post2($lg-4, $md-4, $sm-4, $xs-12); }
+  .post:nth-child(22) { @include make-grid-post2($lg-3, $md-3, $sm-4, $xs-12); }
+  .post:nth-child(23) { @include make-grid-post2($lg-6, $md-6, $sm-6, $xs-12); }
+  .post:nth-child(24) { @include make-grid-post2($lg-3, $md-3, $sm-6, $xs-12); }
+}
+
+
+.posts-4-column-grid {
+
+  .post:nth-child(1) { @include make-grid-post2($lg-3, $md-8, $sm-6, $xs-12); }
+  .post:nth-child(2) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(3) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(4) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(5) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(6) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(7) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(8) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(9) { @include make-grid-post2($lg-3, $md-8, $sm-6, $xs-12); }
+  .post:nth-child(10) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(11) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(12) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(13) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(14) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(15) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(16) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(17) { @include make-grid-post2($lg-3, $md-8, $sm-6, $xs-12); }
+  .post:nth-child(18) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(19) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(20) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(21) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(22) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(23) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+  .post:nth-child(24) { @include make-grid-post2($lg-3, $md-4, $sm-6, $xs-12); }
+}
+
+.posts-2-column-grid {
+
+  .post { @include make-grid-post2($lg-6-short, $md-6-short, $sm-12-short); }
+}
+
+.posts-after-post {
+
+  margin-bottom: ($line-height-computed * 2);
+  margin-top: 0;
+  @include clearfix();
+
+  .post {
+    .post-meta{
+      margin-bottom: 0;
+      line-height: 1;
+      font-size: 12px;
+      margin-top: $line-height-computed / 2;
+    }
+  }
+
+  .post:nth-child(1) {
+    @include make-grid-post2($inline-lg, $inline-md, $inline-sm, $inline-xs);
+  }
+
+  .post:nth-child(2) {
+    @include make-grid-post2($inline-lg, $inline-md, $inline-sm, $inline-xs);
+  }
+}
+
+.posts-sidebar {
+  .post {
+    @include make-grid-post2($sidebar-12, $sidebar-12, $sidebar-12, $sidebar-12);
+  }
+  .post-meta{
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: $line-height-computed / 2;
+    font-size: 12px;
+  }
+}
+
+.posts-grid-narrow-middle-gutter {
+  @media(min-width: $screen-md-min) {
+    padding-right: 40px;
+  }
+}
+
+.posts-grid-narrow {
+
+  .post { @include make-grid-post2($lg-6-narrow, $md-6, $sm-6, $xs-12); }
+}
+
+.post-meta {
+
+  $color: #555;
+
+  @include heading-type();
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: ($line-height-computed / 4);
+  margin-bottom: 0;
+  line-height: 2;
+  letter-spacing: normal;
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  img {
+    max-height: 30px;
+    margin: 0 10px 0 0;
+  }
+
+  .post-meta-author {
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+    margin-right: 6px;
+  }
+
+  .post-meta-author-location {
+  }
+  .post-meta-author-website {
+    display: none;
+    text-transform: none;
+    margin-left: 10px;
+    i {
+      display: none;
+    }
+    opacity: 0.6;
+  }
+
+  a {
+    color: #fff;
+    font-style: normal;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .post-meta-date {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 700;
+    font-style: normal;
+    text-transform: none;
+
+    white-space: nowrap;
+    word-wrap: break-word;
+  }
+
+  .post-meta-comments {
+    margin-left: 6px;
+  }
+
+  i {
+    margin-right: 6px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+
+      &:first-child {
+      }
+
+      i {
+        //font-size: 18px;
+      }
+    }
+  }
+}
+
+.header-naked {
+  .post-meta {
+    i {
+      color: #333;
+    }
+    a {
+      color: #333;
+
+    }
+
+    .post-meta-date {
+      color: rgba(#333, 0.6);
+    }
+  }
+}
+
+.page-content {
+
+  @media(min-width: $screen-md-min) {
+    padding-right: 40px;
+  }
+
+  p {
+    margin: 0 0 ($line-height-computed * 1.5) 0;
+  }
+}
+
+.posts-single {
+
+  @include make-md-column(8);
+  @include make-lg-column(8);
+
+  @media(min-width: $screen-md-min) {
+    padding-right: 60px;
+  }
+
+  .post-content {
+
+    p {
+      margin: 0 0 ($line-height-computed * 1.5) 0;
+
+      a {
+        @include make-nice-hover-underline($brand-primary);
+      }
+
+      img {
+        @include img-responsive();
+      }
+    }
+
+    p.lead {
+
+      @media (max-width: $screen-xs-min) {
+        font-size: 15px !important;
+      }
+    }
+
+
+    .post-attribution {
+
+      font-size: 12px;
+      display: block;
+      background-color: lightyellow;
+      padding: ($line-height-computed / 2);
+
+      i {
+        margin-right: 4px;
+      }
+
+      a {
+        color: #333;
+        text-decoration: underline;
+        background-image: none !important;
+        text-shadow: none !important;
+        &:hover {
+          color: $brand-primary !important;
+          background-image: none !important;
+          text-shadow: none !important;
+        }
+
+      }
+    }
+
+  }
+
+  .post-comments {
+    margin: ($line-height-computed) 0 ($line-height-computed * 2);
+  }
+}
+
+.post-bio {
+  display: block;
+  color: white;
+  @include heading-type();
+  padding-left: 0;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: ($line-height-computed / 3);
+  color: rgba(255, 255, 255, 0.7);
+
+}
+
+
+

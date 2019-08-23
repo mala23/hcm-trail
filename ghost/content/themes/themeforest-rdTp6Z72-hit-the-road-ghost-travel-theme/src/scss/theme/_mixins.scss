@@ -1,0 +1,227 @@
+@mixin heading-type() {
+  font-family: $font-family-sans-serif, sans-serif;
+}
+
+@mixin body-type() {
+  font-family: Merriweather, serif;
+}
+
+@mixin make-nice-underline($color, $hoverColor: $color, $backgroundColor: 'white') {
+
+  background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($color,20%) 50%);
+  background-image: -moz-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($color,20%) 50%);
+  background-image: -o-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($color,20%) 50%);
+  background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($color,20%) 50%);
+  background-position: 0 93%;
+  background-repeat: repeat-x;
+  background-size: 100% 0.15rem;
+  text-shadow: 0.1rem 0 $backgroundColor,0.15rem 0 $backgroundColor,-0.1rem 0 $backgroundColor,-0.15rem 0 $backgroundColor;
+
+  &:hover, &:active, &:focus {
+    background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColor,0%) 50%);
+    background-image: -moz-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColor,0%) 50%);
+    background-image: -o-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColor,0%) 50%);
+    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($hoverColor,0%) 50%);
+  }
+}
+
+@mixin make-nice-hover-underline($color) {
+
+  background-position: 0 93%;
+  background-repeat: repeat-x;
+  background-size: 100% 0.15rem;
+  text-shadow: 0.1rem 0 white,0.15rem 0 white,-0.1rem 0 white,-0.15rem 0 white;
+
+  &:hover, &:active, &:focus {
+    background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($color,0%) 50%);
+    background-image: -moz-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($color,0%) 50%);
+    background-image: -o-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($color,0%) 50%);
+    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($color,0%) 50%);
+  }
+}
+@mixin make-inline-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+  }
+}
+
+@mixin make-grid-post2($lg, $md: $lg, $sm: $md, $xs: $sm) {
+
+  @include make-xs-column(map-get($xs, 'columns'), 10px);
+  @include make-sm-column(map-get($sm, 'columns'), 10px);
+  @include make-md-column(map-get($md, 'columns'), 10px);
+  @include make-lg-column(map-get($lg, 'columns'), 10px);
+
+  display: block;
+
+  .post-image {
+    @media(max-width: $screen-xs-max) {
+      height: map-get($xs, 'height');
+    }
+    @media(min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      height: map-get($sm, 'height');
+    }
+    @media(min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      height: map-get($md, 'height');
+    }
+    height: map-get($lg, 'height');
+  }
+
+  .post-title {
+    @media(max-width: $screen-xs-max) {
+      font-size: map-get($xs, 'font-size');
+      max-width: none;
+      @if (map-get($xs, 'max-width')) {
+        max-width: map-get($xs, 'max-width');
+      }
+    }
+    @media(min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      font-size: map-get($sm, 'font-size');
+      max-width: none;
+      @if (map-get($sm, 'max-width')) {
+        max-width: map-get($sm, 'max-width');
+      }
+    }
+    @media(min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      font-size: map-get($md, 'font-size');
+      max-width: none;
+      @if (map-get($md, 'max-width')) {
+        max-width: map-get($md, 'max-width');
+      }
+    }
+    font-size: map-get($lg, 'font-size');
+    @if (map-get($lg, 'max-width')) {
+      max-width: map-get($lg, 'max-width');
+    }
+  }
+
+}
+
+@mixin make-grid-post($columns, $height, $columns-sm: $columns, $height-sm: $height, $height-xs: $height-sm) {
+
+  @include make-xs-column(12);
+  @include make-sm-column($columns-sm);
+  @include make-md-column($columns);
+  @include make-lg-column($columns);
+
+  padding-bottom: 20px;
+
+  .post-image {
+
+    @media(max-width: $screen-xs-max) {
+      height: $height-xs;
+    }
+    @media(min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      height: $height-sm;
+    }
+
+    height: $height;
+
+    &:after {
+      display: block;
+      content: ' ';
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+    }
+  }
+  .post-header {
+    display: block;
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    right: 15px;
+
+    .post-title {
+      line-height: 1.2;
+      display: block;
+      color: white;
+      font-size: $font-size-h2;
+      margin-bottom: ($line-height-computed / 2);
+      padding: 0;
+    }
+  }
+}
+
+@mixin make-full-image($title-size: $font-size-h2) {
+  .post-title {
+    display: none;
+  }
+}
+
+@mixin make-excerpt($columns: 6) {
+
+  .post-excerpt {
+    color: white;
+    line-height: 1.6;
+    margin-bottom: ($line-height-computed / 4);
+    font-size: 16px;
+  }
+
+  @if ($columns > 6) {
+    .post-excerpt-long {
+      display: block;
+    }
+  } @else {
+    .post-excerpt-short {
+      display: block;
+    }
+  }
+
+  .post-image {
+    &:after {
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    }
+  }
+}
+
+@mixin make-tag($color, $background-color, $underlay-color) {
+
+  a {
+
+    padding: 6px 10px 6px 22px;
+    display: inline-block;
+    margin: 0 11px 11px 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    line-height: 1;
+    height: 23px;
+    background-color: $background-color;
+    color: $color;
+    position: relative;
+
+    &:before {
+      background-color: $underlay-color;
+      border-bottom: 11px solid transparent;
+      border-right: 11px solid $background-color;
+      border-top: 12px solid transparent;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &:after {
+      background: $underlay-color;
+      border-radius: 8px;
+      content: '';
+      height: 6px;
+      left: 11px;
+      position: absolute;
+      width: 6px;
+      top: 9px;
+    }
+
+    &:hover {
+      background-color: $brand-primary;
+      color: white !important;
+      &:before {
+        border-right: 11px solid $brand-primary;
+      }
+    }
+  }
+}

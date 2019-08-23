@@ -1,0 +1,54 @@
+{{!< default}}
+
+{{#post}}
+    {{> header
+        header-post=true
+        header-image=feature_image
+        cover-half=true
+        }}
+{{/post}}
+
+<main id="main" class="container container-content hide-on-menu">
+    {{#post}}
+        <div class="row">
+            <section class="posts posts-single">
+                <article class="post-content">
+                    {{{content}}}
+                </article>
+                <div class="row">
+                    {{#if tags}}
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+                            <div class="widget widget-inline">
+                                <h2 class="widget-title">{{t "Tags"}}</h2>
+                                <div class="tag-cloud">
+                                    {{#foreach tags}}
+                                        <a href="{{url}}">{{name}}</a>
+                                    {{/foreach}}
+                                </div>
+                            </div>
+                        </div>
+                    {{/if}}
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                        <div class="widget widget-inline">
+                            <h2 class="widget-title">{{t "Share"}}</h2>
+                            <div class="tag-cloud">
+                                <a href="http://wwww.facebook.com/sharer.php?u={{url absolute="yes"}}" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="http://twitter.com/share?text={{title}}&url={{url absolute="yes"}}" target="_blank"><i class="fa fa-twitter"></i></a>
+                                <a href="http://plus.google.com/share?url={{url absolute="yes"}}" target="_blank"><i class="fa fa-google-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{#unless page}}
+                    {{> widgets/inline-author}}
+                    <div class="post-comments">
+                        {{> widgets/inline-post-comments}}
+                    </div>
+                    {{> widgets/inline-related-posts}}
+                {{/unless}}
+            </section>
+            {{> sidebar}}
+        </div>
+    {{/post}}
+</main>
+

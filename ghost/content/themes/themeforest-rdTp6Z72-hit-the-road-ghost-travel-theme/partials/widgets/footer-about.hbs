@@ -1,0 +1,15 @@
+<div class="widget widget-footer col-lg-4 col-md-4 col-sm-4 col-xs-12">
+    <h2 class="widget-title">{{t "About"}}</h2>
+    <p>
+        {{@site.description}}
+    </p>
+    <ul class="social-buttons">
+        {{#if @site.facebook}}
+        <li><a href="https://facebook.com/{{@site.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        {{/if}}
+        {{#if @site.twitter}}
+        <li><a href="https://twitter.com/{{@site.twitter}}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        {{/if}}
+        <li><a href="{{@site.url}}/rss/"><i class="fa fa-rss"></i></a></li>
+    </ul>
+</div>

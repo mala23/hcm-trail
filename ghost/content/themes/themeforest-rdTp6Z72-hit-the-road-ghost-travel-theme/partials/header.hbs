@@ -1,0 +1,122 @@
+<header id="header"
+    class="header header-main header-vh100 {{#unless header-image}}{{#unless header-index}}header-naked{{else}}header-hidden{{/unless}}{{/unless}} {{#if header-index}}header-index{{/if}}">
+
+    {{#if header-image}}
+    <div class="header-cover preload-background hide-on-menu {{#if description}}preload-background-darker{{/if}}"
+        data-image="{{img_url header-image}}" data-resize="false">
+        <div class="preload-background-image"></div>
+        <span class="spinner preload-background-spinner">
+            <span class="double-bounce1"></span>
+            <span class="double-bounce2"></span>
+        </span>
+    </div>
+    {{else}}
+    {{#if header-index}}
+    <div class="header-empty-cover hide-on-menu"></div>
+    {{/if}}
+    {{/if}}
+
+    <div class="container">
+        <nav class="navbar navbar-main">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse2"
+                    data-target="bs-example-navbar-collapse-1" aria-expanded="false">
+                    <i class="fa fa-bars"></i>
+                </button>
+                {{#if @site.logo}}
+                <a class="navbar-brand" href="{{@site.url}}"><img src="{{@site.logo}}" alt="logo" /></a>
+                {{else}}
+                <a class="navbar-brand" href="{{@site.url}}">{{@site.title}}</a>
+                {{/if}}
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                {{navigation}}
+            </div>
+        </nav>
+
+        <div class="header-wrap hide-on-menu">
+
+            {{#foreach tags}}
+            {{#if @first}}
+            <a href="{{url}}" class="header-category">{{name}}</a>
+            {{/if}}
+            {{/foreach}}
+            {{#unless tags}}
+            {{#if category}}
+            <span class="header-category featured">{{category}}</span>
+            {{/if}}
+            {{/unless}}
+
+            {{#if title}}
+
+            {{#if header-index}}
+            <h1>{{title}}</h1>
+
+            {{/if}}
+
+            {{#if header-post}}
+
+            <h1>{{title}}</h1>
+
+            {{#unless page}}
+            <span class="post-meta">
+                {{#primary_author}}<span class="post-meta-author"><i class="fa fa-user"></i><a
+                        href="{{url}}">{{name}}</a></span>{{/primary_author}}
+                <time class="post-meta-date"
+                    datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+                <span class="post-meta-comments"><i class="fa fa-comment"></i><a href="#disqus_thread">0
+                        Comments</a></span>
+            </span>
+            {{/unless}}
+            {{/if}}
+
+            {{#if header-author}}
+            <h1>{{title}}</h1>
+
+            {{#if description}}
+            <span class="post-bio">
+                {{description}}
+            </span>
+            {{/if}}
+
+            <span class="post-meta">
+                <ul>
+                    {{#if twitter}}
+                    <li><a href="{{twitter_url}}" target="_blank">{{twitter}}</a></li>
+                    {{/if}}
+                    {{#if facebook}}
+                    <li><a href="{{facebook_url}}" target="_blank"><i class="fa fa-facebook"></i>{{facebook}}</a></li>
+                    {{/if}}
+                    {{#if location}}
+                    <li><a href="https://www.google.com/maps?q={{location}}" target="_blank"><i
+                                class="fa fa-map-marker"></i>{{location}}</a></li>
+                    {{/if}}
+                    {{#if website}}
+                    <li><a href="{{website}}" target="_blank"><i class="fa fa-globe"></i>{{t "Website"}}</a></li>
+                    {{/if}}
+                </ul>
+            </span>
+            {{/if}}
+
+            {{#if header-tag}}
+            <h1>{{title}}</h1>
+            {{#if description}}
+            <span class="post-bio">
+                {{description}}
+            </span>
+            {{/if}}
+            {{/if}}
+
+            {{#if header-page}}
+            <h1>{{title}}</h1>
+            {{/if}}
+            {{/if}}
+        </div>
+
+        {{#if header-image}}
+        <div id="scroll-hint" class="header-scroll-hint hide-on-menu">
+            <i class="fa fa-chevron-down"></i>
+        </div>
+        {{/if}}
+    </div>
+</header>

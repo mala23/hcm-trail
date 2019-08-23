@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/main.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/weather-icons.min.css"}}" />
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+
+<body id="body" class="{{body_class}}">
+
+    {{{body}}}
+
+    {{> footer}}
+
+    <script>window.baseUrl = '{{@site.url}}/';</script>
+    <script src="{{asset "js/lunr.min.js"}}"></script>
+    <script src="{{asset "js/bundle.js"}}"></script>
+
+    {{ghost_foot}}
+</body>
+
+</html>

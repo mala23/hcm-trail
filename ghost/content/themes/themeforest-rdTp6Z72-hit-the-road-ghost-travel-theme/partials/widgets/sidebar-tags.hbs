@@ -1,0 +1,8 @@
+<div class="widget widget-side">
+    <h2 class="widget-title">{{t "Popular tags"}}</h2>
+    {{#get "tags" limit="15" include="count.posts" order="count.posts desc"}}
+        <div class="tag-cloud">
+            {{#foreach tags}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+        </div>
+    {{/get}}
+</div>

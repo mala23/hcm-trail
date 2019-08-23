@@ -1,0 +1,33 @@
+
+.btn {
+  @include heading-type();
+}
+
+.btn-dark {
+  background-color: darken($footer-color, 3%);
+  border: none;
+  color: white;
+}
+
+.btn-input {
+  background-color: $gray-lighter;
+  color: $gray-light;
+  height: 44px;
+  float: right;
+  margin-left: -1px;
+
+  &:hover {
+    color: $brand-primary !important;
+  }
+
+  &.inactive {
+    background-color: white;
+    color: $gray-dark;
+  }
+}
+
+.input-group-btn .btn {
+  height: 44px;
+}
+
+
