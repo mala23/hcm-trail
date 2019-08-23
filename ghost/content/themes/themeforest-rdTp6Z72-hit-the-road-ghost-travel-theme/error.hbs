@@ -1,0 +1,18 @@
+{{!< default}}
+
+{{> header
+    header-page=true
+    category=(t "Error")
+    title=(t "Page not found")}}
+
+<main class="container">
+    <div class="row">
+        <div class="page-content col-lg-8 col-md-8">
+            <p>
+                {{t "The page you were looking for could not be found."}}
+            </p>
+            <a href="{{@site.url}}" class="btn btn-primary">{{t "Take me out of here"}}</a>
+        </div>
+        {{> sidebar}}
+    </div>
+</main>

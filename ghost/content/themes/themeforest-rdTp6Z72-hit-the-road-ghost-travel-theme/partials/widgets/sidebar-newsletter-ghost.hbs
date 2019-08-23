@@ -1,0 +1,14 @@
+<div class="widget widget-side">
+    <h2 class="widget-title">{{t "Newsletter"}}</h2>
+    {{#if @labs.subscribers}}
+        <p>{{t "Subscribe to our newsletter and stay updated on the latest news and special offers!"}}</p>
+        {{subscribe_form
+                form_class="gh-signin form-footer"
+                input_class="gh-input form-control"
+                button_class="button btn btn-primary"
+                placeholder=(t "Enter your email")
+        }}
+    {{else}}
+        <p>{{t "Subscribers feature is not enabled."}}</p>
+    {{/if}}
+</div>

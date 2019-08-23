@@ -1,0 +1,15 @@
+{{!< default}}
+
+{{#post}}
+    {{> header
+        header-page=true
+        title=title}}
+    <main class="container hide-on-menu">
+        <div class="row">
+            <div class="page-content col-lg-8 col-md-8">
+                {{content}}
+            </div>
+            {{> sidebar}}
+        </div>
+    </main>
+{{/post}}

@@ -1,0 +1,17 @@
+{{#get "posts" limit="5" include="tags" as |recents|}}
+
+    <div class="widget widget-side">
+        <h2 class="widget-title">Recent Posts</h2>
+
+        <ul class="link-list">
+            {{#foreach recents}}
+                <li>
+                    <a href="{{url}}"><i class="fa fa-angle-right"></i>&nbsp;&nbsp;{{title}}</a>
+                    <br />
+                    &nbsp;&nbsp;&nbsp;<span style="color: #bbb; font-size: 14px; text-transform: uppercase;">{{date}}</span>
+                </li>
+            {{/foreach}}
+        </ul>
+    </div>
+
+{{/get}}

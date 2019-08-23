@@ -1,0 +1,8 @@
+<nav class="pagination">
+    {{#if prev}}
+        <a class="newer-posts btn {{#if prev}}btn-primary{{else}}btn-disabled{{/if}}" {{#if prev}}href="{{page_url prev}}"{{/if}}><span class="glyphicon fa fa-angle-left"></span> {{t "Previous page"}}</a>
+    {{/if}}
+    {{#if next}}
+        <a class="older-posts btn {{#if next}}btn-primary{{else}}btn-disabled{{/if}}" href="{{page_url next}}">{{t "Next page"}} <span class="glyphicon fa fa-angle-right"></span> </a>
+    {{/if}}
+</nav>

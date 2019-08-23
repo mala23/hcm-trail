@@ -1,0 +1,17 @@
+{{#if post}}
+    {{#post}}
+        {{#if feature_image}}
+            <section id="cover" class="cover" style="background-image: url({{img_url feature_image}});"></section>
+        {{/if}}
+    {{/post}}
+{{else}}
+    {{#if tag.feature_image}}
+        <section id="cover" class="cover" style="background-image: url({{img_url tag.feature_image}});"></section>
+    {{else}}
+        {{#if @blog.cover_image}}
+            <section id="cover" class="cover" style="background-image: url({{img_url @blog.cover_image}});"></section>
+        {{else}}
+            <section id="cover" class="cover"></section>
+        {{/if}}
+    {{/if}}
+{{/if}}

@@ -1,0 +1,60 @@
+<div class="widget">
+
+    <div class="row posts posts-after-post">
+        {{#prev_post}}
+            <article class="post preload-background" data-image="{{img_url feature_image}}" data-resize="true">
+                <a href="{{url}}" class="post-image">
+                    <span class="preload-background-image"></span>
+                    {{#if feature_image}}
+                        <span class="preload-background-spinner spinner">
+                        <span class="double-bounce1"></span>
+                        <span class="double-bounce2"></span>
+                    </span>
+                    {{/if}}
+                    <header class="post-header">
+                        <h2 class="post-title">{{{title}}}</h2>
+                        <p class="post-meta">{{#primary_author}}<span class="post-meta-author"><i class="fa fa-user"></i>{{name}}</span>{{/primary_author}} <time class="post-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time></p>
+                    </header>
+                </a>
+                <div class="post-category-wrap">
+                    {{#primary_tag}}
+                        <a href="{{url}}" class="post-category">
+                            {{name}}
+                        </a>
+                    {{/primary_tag}}
+                    {{#if featured}}
+                        <span class="post-category post-featured">{{t "Featured"}}</span>
+                    {{/if}}
+                </div>
+            </article>
+        {{/prev_post}}
+        {{#next_post}}
+            <article class="post preload-background" data-image="{{img_url feature_image}}" data-resize="true">
+                <a href="{{url}}" class="post-image">
+                    <span class="preload-background-image"></span>
+                    {{#if feature_image}}
+                        <span class="preload-background-spinner spinner">
+                        <span class="double-bounce1"></span>
+                        <span class="double-bounce2"></span>
+                    </span>
+                    {{/if}}
+                    <header class="post-header">
+                        <h2 class="post-title">{{{title}}}</h2>
+                        <p class="post-meta">{{#primary_author}}<span class="post-meta-author"><i class="fa fa-user"></i>{{name}}</span>{{/primary_author}} <time class="post-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time></p>
+                    </header>
+                </a>
+                <div class="post-category-wrap">
+                    {{#primary_tag}}
+                        <a href="{{url}}" class="post-category">
+                            {{name}}
+                        </a>
+                    {{/primary_tag}}
+                    {{#if featured}}
+                        <span class="post-category post-featured">{{t "Featured"}}</span>
+                    {{/if}}
+                </div>
+            </article>
+        {{/next_post}}
+    </div>
+</div>
+

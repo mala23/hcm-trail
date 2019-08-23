@@ -1,0 +1,17 @@
+<footer id="footer" class="footer footer-page hide-on-menu">
+    <div class="container">
+        <div class="row">
+            {{> widgets/footer-about}}
+            {{> widgets/footer-tags}}
+            {{> widgets/footer-newsletter-ghost}}
+        </div>
+        <div class="row copyright">
+            <div class="col-sm-12">
+                <p class="copyright">
+                    {{t "Copyright ©"}} {{date format='YYYY'}}
+                    {{t "Published with"}} <a href="https://ghost.org/" target="_blank">Ghost</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

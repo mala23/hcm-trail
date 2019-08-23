@@ -1,0 +1,45 @@
+{
+  "name": "hit-the-road",
+  "version": "1.14.0",
+  "description": "Hit the Road is clean & minimalistic Ghost blog theme for those who want to share their beautiful travel stories.",
+  "engines": {
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2"
+  },
+  "author": {
+    "name": "Majestic Jungle",
+    "email": "support@majesticjungle.com"
+  },
+  "config": {
+    "posts_per_page": 8
+  },
+  "keywords": [
+    "ghost-theme"
+  ],
+  "license": "ISC",
+  "scripts": {
+    "css": "node-sass --output-style compressed src/scss/main.scss assets/css/main.min.css",
+    "js": "browserify src/js/main.js -o assets/js/bundle.js -t [ babelify ] --external lunr --verbose"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": [
+            "last 8 versions"
+          ]
+        }
+      ]
+    ],
+    "env": {}
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^8.0.0",
+    "browserify": "^16.2.2",
+    "node-sass": "^4.9.0"
+  }
+}
